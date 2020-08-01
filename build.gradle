@@ -28,7 +28,17 @@ dependencies {
     testImplementation 'junit:junit:4.13'
 }
 
-task sortingTest(type : JavaExec) {
+task InsertionSort(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = "com.algdat.tests.sortingtests." + (project.hasProperty("mainClass") ? project.getProperty("mainClass") : "NULL")
+    main = "com.algdat.tests.sortingtests.InsertionSortTest"
+}
+
+task SelectionSort(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.tests.sortingtests.SelectionSortTest"
+}
+
+task DFS(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.DFS"
 }
