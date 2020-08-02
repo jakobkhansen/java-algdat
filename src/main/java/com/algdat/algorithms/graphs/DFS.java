@@ -3,28 +3,6 @@ package com.algdat.algorithms.graphs;
 import java.util.ArrayList;
 
 public class DFS {
-    public static class Node {
-        ArrayList<Node> edges = new ArrayList<>();
-        boolean visited = false;
-        String id;
-
-        public Node(String id) {
-            this.id = id;
-        }
-
-        public void addEdge(Node node) {
-            edges.add(node);
-        }
-
-        public String toString() {
-            String ret = "Node: " + id + "\n" + "Edges: ";
-            for (Node node : edges) {
-                ret += node.id + " ";
-            }
-            return ret + "\n";
-        }
-    }
-
     // Returns the order of nodes visited in DFS order
     public static ArrayList<Node> dfsOrder(Node start) {
         ArrayList<Node> order = new ArrayList<>();

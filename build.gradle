@@ -42,3 +42,8 @@ task DFS(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.DFS"
 }
+
+task BFS(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.BFS"
+}
