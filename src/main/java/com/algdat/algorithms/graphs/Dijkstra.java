@@ -14,8 +14,13 @@ public class Dijkstra {
         PriorityQueue<Node> pq = new PriorityQueue<>(false);
 
         pq.addElement(start, 0);
+        start.shortestPathValue = 0;
 
         while (!pq.isEmpty()) {
+
+            // Visualize priority queue updates
+            //System.out.println(pq);
+
             Node current = pq.pop();
 
             if (current == finish) {
@@ -65,5 +70,7 @@ public class Dijkstra {
         List<Node> path = Dijkstra.dijkstraShortestPath(graph.get(6), graph.get(9));
 
         System.out.println(GraphUtils.nodesToStringSimpleReversed(path));
+
+        //System.out.println(GraphUtils.graphToGraphML(graph, false));
     }
 }

@@ -75,4 +75,16 @@ public class PriorityQueue<T> {
         }
         return false;
     }
+
+
+    public String toString() {
+        String ret = "Priority queue (Element, priority):\n";
+        ret += "|       |\n";
+
+        for (QueueNode node : queue) {
+            ret += "| " + node.element.toString() + " | " + node.priority + " |\n";
+        }
+
+        return ret + "_________\n";
+    }
 }

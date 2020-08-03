@@ -46,6 +46,10 @@ public class Node {
     }
 
     public String toString() {
+        return id;
+    }
+
+    public String toStringDetailed() {
         String ret = "Node: " + id + "\n" + "Edges (id, weight): [ ";
         for (Node node : edges.keySet()) {
             ret += "(" + node.id + ", " + edges.get(node) + ") ";
