@@ -3,6 +3,9 @@ package com.algdat.algorithms.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.algdat.datastructures.graphs.Node;
+import com.algdat.utils.GraphUtils;
+
 public class BFS {
     public static List<List<Node>> bfs(Node start) {
         List<List<Node>> layers = new ArrayList<>();
@@ -16,7 +19,7 @@ public class BFS {
             layers.add(new ArrayList<>());
 
             for (Node node : layers.get(i)) {
-                for (Node edge : node.edges) {
+                for (Node edge : node.edges.keySet()) {
                     if (!edge.visited) {
                         edge.visited = true;
                         layers.get(i+1).add(edge);
@@ -30,9 +33,9 @@ public class BFS {
 
     // Test
     public static void main(String[] args) {
-        List<Node> nodes = GraphUtils.generateGraph(5, 0.2F, true, false, 123456789);
+        List<Node> nodes = GraphUtils.generateGraph(5, 0.2F, 0, true, false, 123456789);
 
-        System.out.println(GraphUtils.graphToString(nodes));
+        System.out.println(GraphUtils.nodesToStringDetailed(nodes));
 
         List<List<Node>> bfsLayers = bfs(nodes.get(0));
 

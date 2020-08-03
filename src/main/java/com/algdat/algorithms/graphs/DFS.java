@@ -1,6 +1,10 @@
 package com.algdat.algorithms.graphs;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import com.algdat.datastructures.graphs.Node;
+import com.algdat.utils.GraphUtils;
 
 public class DFS {
     // Returns the order of nodes visited in DFS order
@@ -14,7 +18,7 @@ public class DFS {
         order.add(current);
         current.visited = true;
 
-        for (Node edge : current.edges) {
+        for (Node edge : current.edges.keySet()) {
             if (!edge.visited) {
                 dfsRecursive(order, edge);
             }
@@ -23,21 +27,15 @@ public class DFS {
 
     // Test
     public static void main(String[] args) {
-        Node node1 = new Node("1");
-        Node node2 = new Node("2");
-        Node node3 = new Node("3");
-        Node node4 = new Node("4");
-        Node node5 = new Node("5");
+        List<Node> graph = GraphUtils.generateGraph(10, 0.2F, 0, true, false, 123456789);
 
-        node1.addEdge(node2);
-        node2.addEdge(node3);
-        node2.addEdge(node4);
-        node4.addEdge(node5);
+        ArrayList<Node> order = dfsOrder(graph.get(0));
 
-        ArrayList<Node> order = dfsOrder(node1);
+        System.out.println(GraphUtils.nodesToStringDetailed(graph));
 
+        System.out.println("DFS:");
         for (Node node : order) {
-            System.out.println(node.toString());
+            System.out.print(node.id + " ");
         }
     }
 
