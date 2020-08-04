@@ -12,6 +12,7 @@ public class GraphUtils {
     public static List<Node> generateGraph(
                 int numNodes, 
                 float sparsity, 
+                int minWeight,
                 int maxWeight,
                 boolean connected, 
                 boolean directed,
@@ -22,32 +23,32 @@ public class GraphUtils {
 
         List<Node> nodes = new ArrayList<>();
 
-        buildNodes(nodes, numNodes, maxWeight, connected, directed);
+        buildNodes(nodes, numNodes, minWeight, maxWeight, connected, directed);
 
-        buildEdges(nodes, maxWeight, sparsity, directed);
+        buildEdges(nodes, minWeight, maxWeight, sparsity, directed);
 
         return nodes;
     }
 
-    static void buildNodes(List<Node> nodes, int numNodes, int maxWeight, boolean connected, boolean directed) {
+    static void buildNodes(List<Node> nodes, int numNodes, int minWeight, int maxWeight, boolean connected, boolean directed) {
         for (int i = 0; i < numNodes; i++) {
             nodes.add(new Node("" + i));
 
             if (connected && i > 0) {
-                int randomEdge = randomNumber(0, i);
-                int weight = randomNumber(1, maxWeight+1);
+                int randomEdge = randomNumber(0, i-1);
+                int weight = randomNumber(minWeight, maxWeight);
 
                 nodes.get(i).addEdge(nodes.get(randomEdge), directed, weight);
             }
         }
     }
 
-    static void buildEdges(List<Node> nodes, int maxWeight, float sparsity, boolean directed) {
+    static void buildEdges(List<Node> nodes, int minWeight, int maxWeight, float sparsity, boolean directed) {
         for (Node node : nodes) {
             for (Node potentialEdge : nodes) {
                 if (node != potentialEdge && !node.edges.keySet().contains(potentialEdge)) {
                     if (randomBoolean(sparsity)) {
-                        int weight = randomNumber(1, maxWeight+1);
+                        int weight = randomNumber(minWeight, maxWeight);
                         node.addEdge(potentialEdge, directed, weight);
                     }
                 }
@@ -56,7 +57,7 @@ public class GraphUtils {
     }
 
     static int randomNumber(int min, int max) {
-        return numGen.nextInt(max - min) + min;
+        return numGen.nextInt(max+1 - min) + min;
     }
 
     static boolean randomBoolean(float percentage) {

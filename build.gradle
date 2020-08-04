@@ -52,3 +52,8 @@ task dijkstra(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.Dijkstra"
 }
+
+task bellmanford(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.BellmanFord"
+}

@@ -27,7 +27,7 @@ public class DFS {
 
     // Test
     public static void main(String[] args) {
-        List<Node> graph = GraphUtils.generateGraph(10, 0.2F, 0, true, false, 123456789);
+        List<Node> graph = GraphUtils.generateGraph(10, 0.2F, 0, 0, true, false, 123456789);
 
         ArrayList<Node> order = dfsOrder(graph.get(0));
 

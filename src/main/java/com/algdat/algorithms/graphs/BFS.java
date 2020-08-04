@@ -33,7 +33,7 @@ public class BFS {
 
     // Test
     public static void main(String[] args) {
-        List<Node> nodes = GraphUtils.generateGraph(5, 0.2F, 0, true, false, 123456789);
+        List<Node> nodes = GraphUtils.generateGraph(5, 0.2F, 0, 0, true, false, 123456789);
 
         System.out.println(GraphUtils.nodesToStringDetailed(nodes));
 

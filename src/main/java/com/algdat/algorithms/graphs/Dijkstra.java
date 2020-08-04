@@ -63,7 +63,7 @@ public class Dijkstra {
 
     // Test
     public static void main(String[] args) {
-        List<Node> graph = GraphUtils.generateGraph(10, 0.1F, 20, true, false, 123456789);
+        List<Node> graph = GraphUtils.generateGraph(10, 0.1F, 1, 20, true, false, 123456789);
 
         System.out.println(GraphUtils.nodesToStringDetailed(graph));
 
