@@ -29,16 +29,11 @@ public class BellmanFord {
             }
         }
 
-        for (Node node : nodes) {
-            System.out.println(node.id + " " + node.shortestPathValue);
-        }
-
         // Check for negative cycle
         for (Node node : nodes) {
             for (Node edge : node.edges.keySet()) {
                 int potentialShortest = node.shortestPathValue + node.edges.get(edge);
 
-                System.out.println(edge.id);
                 if (node.shortestPathValue != Integer.MAX_VALUE && potentialShortest < edge.shortestPathValue && node.previous != edge) {
                     System.out.println("Negative cycle");
                     return null;
@@ -68,7 +63,7 @@ public class BellmanFord {
 
         System.out.println(GraphUtils.nodesToStringDetailed(graph));
 
-        System.out.println(GraphUtils.graphToGraphML(graph, false));
+        //System.out.println(GraphUtils.graphToGraphML(graph, false));
 
         System.out.println("Bellman Ford:");
         List<Node> path = shortestPathBetween(graph, graph.get(9), graph.get(5));
