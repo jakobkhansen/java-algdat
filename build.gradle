@@ -63,3 +63,7 @@ task bellmanford(type : JavaExec) {
     main = "com.algdat.algorithms.graphs.BellmanFord"
 }
 
+task binarysearch(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.arrays.BinarySearch"
+}
