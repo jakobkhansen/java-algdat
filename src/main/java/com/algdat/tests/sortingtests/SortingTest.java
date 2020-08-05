@@ -46,7 +46,7 @@ class SortingTest {
 
     boolean runTest(SortingAlgorithm algorithm, int[] arrayToSort) {
         int[] arrayCopy = Arrays.copyOf(arrayToSort, arrayToSort.length);
-        algorithm.sort(arrayToSort);
+        arrayToSort = algorithm.sort(arrayToSort);
 
         return isSorted(arrayCopy, arrayToSort);
     }

@@ -28,22 +28,27 @@ dependencies {
     testImplementation 'junit:junit:4.13'
 }
 
-task InsertionSort(type : JavaExec) {
+task insertionsort(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.tests.sortingtests.InsertionSortTest"
 }
 
-task SelectionSort(type : JavaExec) {
+task selectionsort(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.tests.sortingtests.SelectionSortTest"
 }
 
-task DFS(type : JavaExec) {
+task countingsort(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.tests.sortingtests.CountingSortTest"
+}
+
+task dfs(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.DFS"
 }
 
-task BFS(type : JavaExec) {
+task bfs(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.BFS"
 }
@@ -57,3 +62,4 @@ task bellmanford(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.BellmanFord"
 }
+
