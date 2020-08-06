@@ -67,3 +67,8 @@ task binarysearch(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.arrays.BinarySearch"
 }
+
+task binarytree(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.datastructures.graphs.BinaryTree"
+}
