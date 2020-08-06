@@ -5,8 +5,12 @@ import java.util.List;
 
 import com.algdat.utils.BinaryTreePrinter;
 
+
 // Insert, Traversal (Pre, post, in), delete, 
 public class BinaryTree {
+    final boolean LEFT = true;
+    final boolean RIGHT = false;
+
     public class Node {
         public int value;
 
@@ -77,67 +81,76 @@ public class BinaryTree {
     }
 
     private void delete(Node nodeToDelete) {
-        // Very unclean, consider doing recursive instead
-        // Recursive is however not "inplace"
+        // Both children
         if (nodeToDelete.left != null && nodeToDelete.right != null) {
-            Node replacer = firstInorderNode(nodeToDelete.right);
-
-            if (replacer.right != null) {
-                replacer.right.parent = replacer.parent;
-            }
-            replacer.parent.left = replacer.right;
-
-            replacer.left = nodeToDelete.left;
-            replacer.right = nodeToDelete.right;
-
-            replacer.left.parent = replacer;
-            replacer.right.parent = replacer;
-            replacer.parent = nodeToDelete.parent;
-
-            if (isLeftChild(nodeToDelete)) {
-                nodeToDelete.parent.left = replacer;
-            } else {
-                nodeToDelete.parent.right = replacer;
-            }
-
+            deleteNodeWithTwoChildren(nodeToDelete);
 
         // Left child only
         } else if (nodeToDelete.left != null) {
-            if (isLeftChild(nodeToDelete)) {
+            deleteNodeWithOneChild(nodeToDelete, LEFT);
+
+        // Right child only
+        } else if (nodeToDelete.right != null) {
+            deleteNodeWithOneChild(nodeToDelete, RIGHT);
+
+        // No children
+        } else {
+            deleteNodeWithNoChild(nodeToDelete);
+        }
+    }
+
+    private void deleteNodeWithTwoChildren(Node nodeToDelete) {
+        Node replacer = firstInorderNode(nodeToDelete.right);
+
+        if (replacer.right != null) {
+            replacer.right.parent = replacer.parent;
+        }
+        replacer.parent.left = replacer.right;
+
+        replacer.left = nodeToDelete.left;
+        replacer.right = nodeToDelete.right;
+
+        replacer.left.parent = replacer;
+        replacer.right.parent = replacer;
+        replacer.parent = nodeToDelete.parent;
+
+        if (whichChildOfParent(nodeToDelete) == LEFT) {
+            nodeToDelete.parent.left = replacer;
+        } else {
+            nodeToDelete.parent.right = replacer;
+        }
+    }
+
+    private void deleteNodeWithOneChild(Node nodeToDelete, boolean whichChild) {
+        if (whichChild == LEFT) {
+            if (whichChildOfParent(nodeToDelete) == LEFT) {
                 nodeToDelete.left.parent = nodeToDelete.parent;
                 nodeToDelete.parent.left = nodeToDelete.left;
             } else {
                 nodeToDelete.right.parent = nodeToDelete.parent;
                 nodeToDelete.parent.right = nodeToDelete.left;
             }
-
-        // Right child only
-        } else if (nodeToDelete.right != null) {
-            if (isLeftChild(nodeToDelete)) {
+        } else {
+            if (whichChildOfParent(nodeToDelete) == LEFT) {
                 nodeToDelete.right.parent = nodeToDelete.parent;
                 nodeToDelete.parent.left = nodeToDelete.right;
             } else {
                 nodeToDelete.right.parent = nodeToDelete.parent;
                 nodeToDelete.parent.right = nodeToDelete.right;
             }
-
-
-        // No children
-        } else {
-            if (isLeftChild(nodeToDelete)) {
-                nodeToDelete.parent.left = null;
-            } else {
-                nodeToDelete.parent.right = null;
-            }
         }
     }
 
-    private boolean isLeftChild(Node child) {
-        return child.parent.left == child;
+    private void deleteNodeWithNoChild(Node nodeToDelete) {
+        if (whichChildOfParent(nodeToDelete) == LEFT) {
+            nodeToDelete.parent.left = null;
+        } else {
+            nodeToDelete.parent.right = null;
+        }
     }
 
-    private boolean isRightChild(Node child) {
-        return child.parent.right == child;
+    private boolean whichChildOfParent(Node child) {
+        return child.parent.left == child;
     }
 
     private Node firstInorderNode(Node start) {
