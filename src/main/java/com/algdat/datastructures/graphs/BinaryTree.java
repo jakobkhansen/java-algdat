@@ -5,12 +5,17 @@ import java.util.List;
 
 import com.algdat.utils.BinaryTreePrinter;
 
+<<<<<<< HEAD
 
 // Insert, Traversal (Pre, post, in), delete, 
 public class BinaryTree {
     final boolean LEFT = true;
     final boolean RIGHT = false;
 
+=======
+// Insert, Traversal (Pre, post, in), delete, 
+public class BinaryTree {
+>>>>>>> origin/master
     public class Node {
         public int value;
 
@@ -81,6 +86,7 @@ public class BinaryTree {
     }
 
     private void delete(Node nodeToDelete) {
+<<<<<<< HEAD
         // Both children
         if (nodeToDelete.left != null && nodeToDelete.right != null) {
             deleteNodeWithTwoChildren(nodeToDelete);
@@ -124,20 +130,57 @@ public class BinaryTree {
     private void deleteNodeWithOneChild(Node nodeToDelete, boolean whichChild) {
         if (whichChild == LEFT) {
             if (whichChildOfParent(nodeToDelete) == LEFT) {
+=======
+        // Very unclean, consider doing recursive instead
+        // Recursive is however not "inplace"
+        if (nodeToDelete.left != null && nodeToDelete.right != null) {
+            Node replacer = firstInorderNode(nodeToDelete.right);
+
+            if (replacer.right != null) {
+                replacer.right.parent = replacer.parent;
+            }
+            replacer.parent.left = replacer.right;
+
+            replacer.left = nodeToDelete.left;
+            replacer.right = nodeToDelete.right;
+
+            replacer.left.parent = replacer;
+            replacer.right.parent = replacer;
+            replacer.parent = nodeToDelete.parent;
+
+            if (isLeftChild(nodeToDelete)) {
+                nodeToDelete.parent.left = replacer;
+            } else {
+                nodeToDelete.parent.right = replacer;
+            }
+
+
+        // Left child only
+        } else if (nodeToDelete.left != null) {
+            if (isLeftChild(nodeToDelete)) {
+>>>>>>> origin/master
                 nodeToDelete.left.parent = nodeToDelete.parent;
                 nodeToDelete.parent.left = nodeToDelete.left;
             } else {
                 nodeToDelete.right.parent = nodeToDelete.parent;
                 nodeToDelete.parent.right = nodeToDelete.left;
             }
+<<<<<<< HEAD
         } else {
             if (whichChildOfParent(nodeToDelete) == LEFT) {
+=======
+
+        // Right child only
+        } else if (nodeToDelete.right != null) {
+            if (isLeftChild(nodeToDelete)) {
+>>>>>>> origin/master
                 nodeToDelete.right.parent = nodeToDelete.parent;
                 nodeToDelete.parent.left = nodeToDelete.right;
             } else {
                 nodeToDelete.right.parent = nodeToDelete.parent;
                 nodeToDelete.parent.right = nodeToDelete.right;
             }
+<<<<<<< HEAD
         }
     }
 
@@ -153,6 +196,28 @@ public class BinaryTree {
         return child.parent.left == child;
     }
 
+=======
+
+
+        // No children
+        } else {
+            if (isLeftChild(nodeToDelete)) {
+                nodeToDelete.parent.left = null;
+            } else {
+                nodeToDelete.parent.right = null;
+            }
+        }
+    }
+
+    private boolean isLeftChild(Node child) {
+        return child.parent.left == child;
+    }
+
+    private boolean isRightChild(Node child) {
+        return child.parent.right == child;
+    }
+
+>>>>>>> origin/master
     private Node firstInorderNode(Node start) {
         Node current = start;
         while (current.left != null) {
