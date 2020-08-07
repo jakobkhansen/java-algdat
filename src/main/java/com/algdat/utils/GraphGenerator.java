@@ -77,7 +77,7 @@ public class GraphGenerator<T extends GraphNodeBase<T>> {
                 }
 
             } catch (Exception e) {
-                System.out.println("LOL");
+                System.out.println("Error handling LOL");
             }
         }
     }

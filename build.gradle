@@ -72,3 +72,8 @@ task binarytree(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.datastructures.graphs.BinaryTree"
 }
+
+task separationnodes(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.SeparationNodes"
+}
