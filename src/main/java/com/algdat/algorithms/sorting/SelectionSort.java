@@ -1,5 +1,7 @@
 package com.algdat.algorithms.sorting;
 
+import com.algdat.utils.SortingTest;
+
 public class SelectionSort implements SortingAlgorithm {
 
 	@Override
@@ -25,4 +27,11 @@ public class SelectionSort implements SortingAlgorithm {
         return "Selection sort";
 	}
 
+    // Test
+    public static void main(String[] args) {
+        SortingTest test = new SortingTest(100, 10, 0, 100);
+        SelectionSort selectionSort = new SelectionSort();
+
+        test.testAlgorithm(selectionSort);
+    }
 }

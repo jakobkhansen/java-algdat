@@ -1,5 +1,7 @@
 package com.algdat.algorithms.sorting;
 
+import com.algdat.utils.SortingTest;
+
 public class InsertionSort implements SortingAlgorithm {
 
 	@Override
@@ -22,5 +24,12 @@ public class InsertionSort implements SortingAlgorithm {
 	public String algorithmName() {
 		return "Insertion Sort";
 	}
+
+    // Test
+    public static void main(String[] args) {
+        SortingTest test = new SortingTest(100, 10, 0, 100);
+        InsertionSort insertionSort = new InsertionSort();
+        test.testAlgorithm(insertionSort);
+    }
 
 }
