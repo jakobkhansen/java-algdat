@@ -32,7 +32,7 @@ algorithms.
     
   * Other
     * ❌ Topological sort
-    * ❌ Separation nodes
+    * ✔️  Separation nodes
     * ❌ Strongly connected components
 * Arrays
   * ✔️ Binary search
