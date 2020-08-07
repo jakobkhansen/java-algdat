@@ -3,10 +3,46 @@ package com.algdat.algorithms.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.algdat.datastructures.graphs.Node;
+import com.algdat.interfaces.GraphNodeUnweighted;
+import com.algdat.utils.GraphGeneratorUnweighted;
 import com.algdat.utils.GraphUtils;
 
 public class BFS {
+    public static class Node implements GraphNodeUnweighted<Node> {
+        boolean visited = false;
+        List<Node> edges = new ArrayList<>();
+        String id;
+
+        public Node(String id) {
+            this.id = id;
+        }
+
+        @Override
+		public void addEdgeUndirected(Node node) {
+            edges.add(node);	
+            node.addEdgeDirected(this);
+		}
+
+		@Override
+		public void addEdgeDirected(Node node) {
+            edges.add(node);
+		}
+
+		@Override
+		public boolean containsEdge(Node node) {
+            return edges.contains(node);
+		}
+
+		@Override
+		public String getId() {
+            return id;
+		}
+
+		@Override
+		public List<Node> getEdges() {
+            return edges;
+		}
+    }
     public static List<List<Node>> bfs(Node start) {
         List<List<Node>> layers = new ArrayList<>();
 
@@ -19,7 +55,7 @@ public class BFS {
             layers.add(new ArrayList<>());
 
             for (Node node : layers.get(i)) {
-                for (Node edge : node.edges.keySet()) {
+                for (Node edge : node.edges) {
                     if (!edge.visited) {
                         edge.visited = true;
                         layers.get(i+1).add(edge);
@@ -33,9 +69,12 @@ public class BFS {
 
     // Test
     public static void main(String[] args) {
-        List<Node> nodes = GraphUtils.generateGraph(5, 0.2F, 0, 0, true, false, 123456789);
+        GraphGeneratorUnweighted<Node> generator = new GraphGeneratorUnweighted<>();
+        List<Node> nodes = generator.generateGraph(Node.class, 5, 0.2F, true, false, 123456789);
 
-        System.out.println(GraphUtils.nodesToStringDetailed(nodes));
+        System.out.println(GraphUtils.unweightedGraphToStringDetailed(nodes));
+
+        System.out.println(GraphUtils.unweightedGraphToGraphML(nodes, false));
 
         List<List<Node>> bfsLayers = bfs(nodes.get(0));
 
@@ -50,7 +89,7 @@ public class BFS {
             ret += "Layer " + i + " [ ";
 
             for (Node node : layers.get(i)) {
-                ret += node.id + " ";
+                ret += node.getId() + " ";
             }
             ret += "]\n";
         }
