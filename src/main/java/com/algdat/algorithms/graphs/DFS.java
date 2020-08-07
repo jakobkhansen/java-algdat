@@ -3,10 +3,47 @@ package com.algdat.algorithms.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.algdat.datastructures.graphs.Node;
+import com.algdat.interfaces.GraphNodeUnweighted;
+import com.algdat.utils.GraphGeneratorUnweighted;
 import com.algdat.utils.GraphUtils;
 
 public class DFS {
+    public static class Node implements GraphNodeUnweighted<Node> {
+        boolean visited;
+        String id;
+        ArrayList<Node> edges = new ArrayList<>();
+
+        public Node(String id) {
+            this.id = id;
+        }
+
+		@Override
+		public void addEdgeUndirected(Node node) {
+            edges.add(node);
+			
+            node.addEdgeDirected(this);
+		}
+
+		@Override
+		public void addEdgeDirected(Node node) {
+            edges.add(node);
+		}
+
+		@Override
+		public boolean containsEdge(Node node) {
+            return edges.contains(node);
+		}
+
+		@Override
+		public List<Node> getEdges() {
+            return edges;
+		}
+
+		@Override
+		public String getId() {
+            return id;
+		}
+    }
     // Returns the order of nodes visited in DFS order
     public static ArrayList<Node> dfsOrder(Node start) {
         ArrayList<Node> order = new ArrayList<>();
@@ -18,7 +55,7 @@ public class DFS {
         order.add(current);
         current.visited = true;
 
-        for (Node edge : current.edges.keySet()) {
+        for (Node edge : current.getEdges()) {
             if (!edge.visited) {
                 dfsRecursive(order, edge);
             }
@@ -27,16 +64,17 @@ public class DFS {
 
     // Test
     public static void main(String[] args) {
-        List<Node> graph = GraphUtils.generateGraph(10, 0.2F, 0, 0, true, false, 123456789);
+        GraphGeneratorUnweighted<Node> generator = new GraphGeneratorUnweighted<>();
+        List<Node> graph = generator.generateGraph(Node.class, 10, 0.01F, true, false, 1234567890);
 
         ArrayList<Node> order = dfsOrder(graph.get(0));
 
-        System.out.println(GraphUtils.nodesToStringDetailed(graph));
+        System.out.println(GraphUtils.unweightedGraphToStringDetailed(graph));
 
         System.out.println("DFS:");
-        for (Node node : order) {
-            System.out.print(node.id + " ");
-        }
+        System.out.println(GraphUtils.nodesToStringSimple(order));
+
+        //System.out.println(GraphUtils.unweightedGraphToGraphML(graph, false));
     }
 
 
