@@ -1,11 +1,12 @@
-package com.algdat.tests.sortingtests;
+package com.algdat.utils;
+
 
 import java.util.Arrays;
 import java.util.Random;
 
 import com.algdat.algorithms.sorting.SortingAlgorithm;
 
-class SortingTest {
+public class SortingTest {
 
     private int numTests;
     private int arrayMinValue;

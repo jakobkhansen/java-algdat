@@ -1,5 +1,7 @@
 package com.algdat.algorithms.sorting;
 
+import com.algdat.utils.SortingTest;
+
 public class CountingSort implements SortingAlgorithm {
 
 	@Override
@@ -26,5 +28,12 @@ public class CountingSort implements SortingAlgorithm {
 	public String algorithmName() {
 		return "Counting sort";
 	}
+    
+    // Test
+    public static void main(String[] args) {
+        CountingSort countingSort = new CountingSort();
+        SortingTest test = new SortingTest(100, 15, 0, 100);
+        test.testAlgorithm(countingSort);
+    }
 
 }

@@ -30,17 +30,17 @@ dependencies {
 
 task insertionsort(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = "com.algdat.tests.sortingtests.InsertionSortTest"
+    main = "com.algdat.algorithms.sorting.InsertionSort"
 }
 
 task selectionsort(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = "com.algdat.tests.sortingtests.SelectionSortTest"
+    main = "com.algdat.algorithms.sorting.SelectionSort"
 }
 
 task countingsort(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
-    main = "com.algdat.tests.sortingtests.CountingSortTest"
+    main = "com.algdat.algorithms.sorting.CountingSort"
 }
 
 task dfs(type : JavaExec) {
