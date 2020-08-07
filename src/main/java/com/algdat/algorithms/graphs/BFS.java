@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.algdat.interfaces.GraphNodeUnweighted;
-import com.algdat.utils.GraphGeneratorUnweighted;
+import com.algdat.utils.GraphGenerator;
 import com.algdat.utils.GraphUtils;
 
 public class BFS {
@@ -16,17 +16,6 @@ public class BFS {
         public Node(String id) {
             this.id = id;
         }
-
-        @Override
-		public void addEdgeUndirected(Node node) {
-            edges.add(node);	
-            node.addEdgeDirected(this);
-		}
-
-		@Override
-		public void addEdgeDirected(Node node) {
-            edges.add(node);
-		}
 
 		@Override
 		public boolean containsEdge(Node node) {
@@ -41,6 +30,11 @@ public class BFS {
 		@Override
 		public List<Node> getEdges() {
             return edges;
+		}
+
+		@Override
+		public void addEdge(Node node) {
+            edges.add(node);
 		}
     }
     public static List<List<Node>> bfs(Node start) {
@@ -69,12 +63,12 @@ public class BFS {
 
     // Test
     public static void main(String[] args) {
-        GraphGeneratorUnweighted<Node> generator = new GraphGeneratorUnweighted<>();
+        GraphGenerator<Node> generator = new GraphGenerator<>();
         List<Node> nodes = generator.generateGraph(Node.class, 5, 0.2F, true, false, 123456789);
 
         System.out.println(GraphUtils.unweightedGraphToStringDetailed(nodes));
 
-        System.out.println(GraphUtils.unweightedGraphToGraphML(nodes, false));
+        //System.out.println(GraphUtils.unweightedGraphToGraphML(nodes, false));
 
         List<List<Node>> bfsLayers = bfs(nodes.get(0));
 

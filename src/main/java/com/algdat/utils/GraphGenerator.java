@@ -1,33 +1,37 @@
 package com.algdat.utils;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.algdat.interfaces.GraphNodeUnweighted;
+import com.algdat.interfaces.GraphNodeBase;
 
-
-public class GraphGeneratorUnweighted<T extends GraphNodeUnweighted<T>> {
+public class GraphGenerator<T extends GraphNodeBase<T>> {
 
     private Random numGen;
     private int numNodes;
     private float sparsity; 
+    int minWeight;
+    int maxWeight;
     private boolean connected;
     private boolean directed;
 
-    public GraphGeneratorUnweighted() {}
+    public GraphGenerator() {}
 
     public List<T> generateGraph(
             Class<T> nodeType,
                 int numNodes, 
                 float sparsity, 
+                int minWeight,
+                int maxWeight,
                 boolean connected, 
                 boolean directed,
                 long seed
             ) {
         this.numNodes = numNodes;
         this.sparsity = sparsity;
+        this.minWeight = minWeight;
+        this.maxWeight = maxWeight;
         this.connected = connected;
         this.directed = directed;
 
@@ -42,6 +46,17 @@ public class GraphGeneratorUnweighted<T extends GraphNodeUnweighted<T>> {
         return nodes;
     }
 
+    public List<T> generateGraph(
+            Class<T> nodeType,
+            int numNodes, 
+            float sparsity, 
+            boolean connected, 
+            boolean directed,
+            long seed
+    ) {
+        return generateGraph(nodeType, numNodes, sparsity, 0, 0, connected, directed, seed);
+    }
+
     private void buildNodes(Class<T> nodeType, List<T> nodes) {
         for (int i = 0; i < numNodes; i++) {
             try {
@@ -51,11 +66,13 @@ public class GraphGeneratorUnweighted<T extends GraphNodeUnweighted<T>> {
 
                 if (connected && i > 0) {
                     int randomEdge = randomNumber(0, i-1);
+                    int weight = randomNumber(minWeight, maxWeight);
 
                     if (directed) {
-                        nodes.get(i).addEdgeDirected(nodes.get(randomEdge));
+                        nodes.get(i).addEdge(nodes.get(randomEdge), weight);
                     } else {
-                        nodes.get(i).addEdgeUndirected(nodes.get(randomEdge));
+                        nodes.get(i).addEdge(nodes.get(randomEdge), weight);
+                        nodes.get(randomEdge).addEdge(nodes.get(i), weight);
                     }
                 }
 
@@ -70,10 +87,12 @@ public class GraphGeneratorUnweighted<T extends GraphNodeUnweighted<T>> {
             for (T potentialEdge : nodes) {
                 if (randomBoolean(sparsity)) {
                     if (node != potentialEdge && !node.containsEdge(potentialEdge)) {
+                        int weight = randomNumber(minWeight, maxWeight);
                         if (directed) {
-                            node.addEdgeDirected(potentialEdge);
+                            node.addEdge(potentialEdge, weight);
                         } else {
-                            node.addEdgeUndirected(potentialEdge);
+                            node.addEdge(potentialEdge, weight);
+                            potentialEdge.addEdge(node, weight);
                         }
                     }
                 }
@@ -88,7 +107,5 @@ public class GraphGeneratorUnweighted<T extends GraphNodeUnweighted<T>> {
     private boolean randomBoolean(float percentage) {
         return numGen.nextFloat() < percentage;
     }
-
-
 
 }

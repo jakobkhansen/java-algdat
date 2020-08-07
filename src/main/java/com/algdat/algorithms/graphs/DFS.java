@@ -4,30 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.algdat.interfaces.GraphNodeUnweighted;
-import com.algdat.utils.GraphGeneratorUnweighted;
+import com.algdat.utils.GraphGenerator;
 import com.algdat.utils.GraphUtils;
 
 public class DFS {
     public static class Node implements GraphNodeUnweighted<Node> {
+        List<Node> edges = new ArrayList<>();
         boolean visited;
         String id;
-        ArrayList<Node> edges = new ArrayList<>();
 
         public Node(String id) {
             this.id = id;
         }
-
-		@Override
-		public void addEdgeUndirected(Node node) {
-            edges.add(node);
-			
-            node.addEdgeDirected(this);
-		}
-
-		@Override
-		public void addEdgeDirected(Node node) {
-            edges.add(node);
-		}
 
 		@Override
 		public boolean containsEdge(Node node) {
@@ -42,6 +30,11 @@ public class DFS {
 		@Override
 		public String getId() {
             return id;
+		}
+
+		@Override
+		public void addEdge(Node node) {
+            edges.add(node);
 		}
     }
     // Returns the order of nodes visited in DFS order
@@ -64,7 +57,7 @@ public class DFS {
 
     // Test
     public static void main(String[] args) {
-        GraphGeneratorUnweighted<Node> generator = new GraphGeneratorUnweighted<>();
+        GraphGenerator<Node> generator = new GraphGenerator<>();
         List<Node> graph = generator.generateGraph(Node.class, 10, 0.01F, true, false, 1234567890);
 
         ArrayList<Node> order = dfsOrder(graph.get(0));

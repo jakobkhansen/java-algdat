@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.algdat.datastructures.containers.PriorityQueue;
 import com.algdat.interfaces.GraphNodeWeighted;
-import com.algdat.utils.GraphGeneratorWeighted;
+import com.algdat.utils.GraphGenerator;
 import com.algdat.utils.GraphUtils;
 
 public class Dijkstra {
@@ -24,17 +24,6 @@ public class Dijkstra {
         }
 
 		@Override
-		public void addEdgeUndirected(Node node, int weight) {
-            edges.put(node, weight);	
-            node.addEdgeDirected(this, weight);
-		}
-
-		@Override
-		public void addEdgeDirected(Node node, int weight) {
-            edges.put(node, weight);
-		}
-
-		@Override
 		public Map<Node, Integer> getEdges() {
             return edges;
 		}
@@ -48,6 +37,16 @@ public class Dijkstra {
 		public String getId() {
             return id;
 		}
+
+		@Override
+		public void addEdge(Node node) {
+            edges.put(node, 0);
+		}
+
+        @Override
+        public void addEdge(Node node, int weight) {
+            edges.put(node, weight);
+        }
     }
 
     public static List<Node> dijkstraShortestPath(Node start, Node finish) {
@@ -104,7 +103,7 @@ public class Dijkstra {
 
     // Test
     public static void main(String[] args) {
-        GraphGeneratorWeighted<Node> generator = new GraphGeneratorWeighted<>();
+        GraphGenerator<Node> generator = new GraphGenerator<>();
         List<Node> graph = generator.generateGraph(Node.class, 10, 0.01F, 1, 20, true, false, 123456789);
 
         System.out.println(GraphUtils.weightedGraphToStringDetailed(graph));
