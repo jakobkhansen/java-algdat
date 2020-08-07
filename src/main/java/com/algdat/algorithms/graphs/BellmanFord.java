@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.algdat.interfaces.GraphNodeWeighted;
-import com.algdat.utils.GraphGeneratorWeighted;
+import com.algdat.utils.GraphGenerator;
 import com.algdat.utils.GraphUtils;
 
 public class BellmanFord {
@@ -22,17 +22,6 @@ public class BellmanFord {
         }
 
 		@Override
-		public void addEdgeUndirected(Node node, int weight) {
-            edges.put(node, weight);
-            node.addEdgeDirected(this, weight);	
-		}
-
-		@Override
-		public void addEdgeDirected(Node node, int weight) {
-            edges.put(node, weight);
-		}
-
-		@Override
 		public Map<Node, Integer> getEdges() {
             return edges;
 		}
@@ -46,6 +35,17 @@ public class BellmanFord {
 		public String getId() {
             return id;
 		}
+
+		@Override
+		public void addEdge(Node node) {
+            edges.put(node, 0);
+			
+		}
+
+        @Override
+        public void addEdge(Node node, int weight) {
+            edges.put(node, weight);
+        }
     }
 
     public static List<Node> shortestPathBetween(List<Node> nodes, Node start, Node finish) {
@@ -97,12 +97,12 @@ public class BellmanFord {
 
 
     public static void main(String[] args) {
-        GraphGeneratorWeighted<Node> generator = new GraphGeneratorWeighted<>();
+        GraphGenerator<Node> generator = new GraphGenerator<>();
         List<Node> graph = generator.generateGraph(Node.class, 10, 0.05F, -2, 10, true, false, 1234567);
 
         System.out.println(GraphUtils.<Node>weightedGraphToStringDetailed(graph));
 
-        System.out.println(GraphUtils.weightedGraphToGraphML(graph, false));
+        //System.out.println(GraphUtils.weightedGraphToGraphML(graph, false));
 
         System.out.println("Bellman Ford:");
         List<Node> path = shortestPathBetween(graph, graph.get(9), graph.get(5));
