@@ -82,3 +82,7 @@ task separationnodes(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.SeparationNodes"
 }
+ task topologicalsort(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.TopologicalSort"
+ }
