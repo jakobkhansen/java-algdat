@@ -48,6 +48,12 @@ task bucketsort(type : JavaExec) {
     main = "com.algdat.algorithms.sorting.BucketSort"
 }
 
+task mergesort(type : JavaExec) {
+
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.sorting.MergeSort"
+}
+
 task dfs(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.DFS"
