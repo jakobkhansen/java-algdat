@@ -36,7 +36,7 @@ algorithms.
     * ❌ Borůvka's algorithm
         
   * Other
-    * ❌ Topological sort
+    * ✔️  Topological sort
     * ✔️  Separation nodes
     * ❌ Strongly connected components
     * ❌ Huffman coding
