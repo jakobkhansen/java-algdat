@@ -16,7 +16,7 @@ algorithms.
   * ✔️ Selection sort
   * ❌ Merge sort
   * ❌ Quick sort
-  * ❌ Bucket sort
+  * ✔️  Bucket sort
   * ❌ Radix sort
   * ✔️ Counting sort
   

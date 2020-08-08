@@ -43,6 +43,11 @@ task countingsort(type : JavaExec) {
     main = "com.algdat.algorithms.sorting.CountingSort"
 }
 
+task bucketsort(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.sorting.BucketSort"
+}
+
 task dfs(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.DFS"
