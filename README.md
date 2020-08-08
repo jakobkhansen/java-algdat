@@ -13,8 +13,8 @@ algorithms.
 ## Algorithms (✔️ Implemented / ❌ Not implemented):
 * Sorting
   * ✔️ Insertion sort
-  * ✔️ Selection sort
-  * ❌ Merge sort
+  * ✔️  Selection sort
+  * ✔️ Merge sort
   * ❌ Quick sort
   * ✔️  Bucket sort
   * ❌ Radix sort
