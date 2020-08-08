@@ -29,11 +29,18 @@ algorithms.
     * ✔️ Dijkstra
     * ✔️ Bellman-Ford
     * ❌ Topological sort shortest path
-    
+  
+  * Minimum spanning tree
+    * ❌ Prim's algorithm
+    * ❌ Kruskal's algorithm
+    * ❌ Borůvka's algorithm
+        
   * Other
     * ❌ Topological sort
     * ✔️  Separation nodes
     * ❌ Strongly connected components
+    * ❌ Huffman coding
+    
 * Arrays
   * ✔️ Binary search
 
@@ -43,6 +50,7 @@ algorithms.
   * ✔️ Priority queue
   * ❌ Heap
   * ❌ HashMap
+  
 * Graphs
   * ✔️ Binary tree
   * ❌ Red black tree
