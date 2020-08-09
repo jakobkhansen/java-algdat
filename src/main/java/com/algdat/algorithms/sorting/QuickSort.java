@@ -45,6 +45,14 @@ public class QuickSort implements SortingAlgorithm {
         array[j] = temp;
     }
 
+    public String arrToString(int[] array, int l, int r) {
+        String ret = "[ ";
+        for (int i = l; i <= r; i++) {
+            ret += array[i] + " ";
+        }
+        return ret + "]";
+    }
+
 	@Override
 	public String algorithmName() {
         return "Quick sort";

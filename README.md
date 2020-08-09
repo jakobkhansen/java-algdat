@@ -17,30 +17,31 @@ algorithms.
   * ✔️  Merge sort
   * ✔️  Quick sort
   * ✔️  Bucket sort
-  * ❌ Radix sort
+  * ✔️ Radix sort
   * ✔️  Counting sort
-  
+  * ❌ Heap sort
+
 * Graphs
   * Traversal
     * ✔️ DFS
     * ✔️ BFS
-    
+
   * Shortest path
     * ✔️ Dijkstra
     * ✔️ Bellman-Ford
     * ❌ Topological sort shortest path
-  
+
   * Minimum spanning tree
     * ❌ Prim's algorithm
     * ❌ Kruskal's algorithm
     * ❌ Borůvka's algorithm
-        
+
   * Other
     * ✔️  Topological sort
     * ✔️  Separation nodes
     * ❌ Strongly connected components
     * ❌ Huffman coding
-    
+
 * Arrays
   * ✔️ Binary search
 
@@ -50,7 +51,7 @@ algorithms.
   * ✔️ Priority queue
   * ❌ Heap
   * ❌ HashMap
-  
+
 * Graphs
   * ✔️ Binary tree
   * ❌ Red black tree
@@ -58,4 +59,5 @@ algorithms.
 ## Utilities
 * ✔️ Graph Generator
 * ✔️ Binary tree visualizer
+* ✔️  Sorting test generator
 * ❌ Binary tree generator
