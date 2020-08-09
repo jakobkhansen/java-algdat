@@ -6,10 +6,9 @@ public class QuickSort implements SortingAlgorithm {
 
 	@Override
 	public int[] sort(int[] array) {
-
         quickSort(array, 0, array.length - 1);
 
-		return array;
+        return array;
 	}
 
     public void quickSort(int[] array, int l, int r) {
@@ -32,9 +31,7 @@ public class QuickSort implements SortingAlgorithm {
                 }
             }
 
-
             swap(array, l, rightScan);
-
 
             quickSort(array, l, rightScan - 1);
 
@@ -46,14 +43,6 @@ public class QuickSort implements SortingAlgorithm {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
-    }
-
-    public String arrToString(int[] array, int l, int r) {
-        String ret = "[ ";
-        for (int i = l; i <= r; i++) {
-            ret += array[i] + " ";
-        }
-        return ret + "]";
     }
 
 	@Override
