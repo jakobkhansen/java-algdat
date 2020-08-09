@@ -47,7 +47,7 @@ algorithms.
 
 ## Datastructures
 * Containers
-  * ❌ Stack
+  * ✔️ Stack
   * ✔️ Priority queue
   * ❌ Heap
   * ❌ HashMap
