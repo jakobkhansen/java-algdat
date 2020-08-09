@@ -14,11 +14,11 @@ algorithms.
 * Sorting
   * ✔️ Insertion sort
   * ✔️  Selection sort
-  * ✔️ Merge sort
-  * ❌ Quick sort
+  * ✔️  Merge sort
+  * ✔️  Quick sort
   * ✔️  Bucket sort
   * ❌ Radix sort
-  * ✔️ Counting sort
+  * ✔️  Counting sort
   
 * Graphs
   * Traversal

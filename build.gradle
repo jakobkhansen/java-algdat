@@ -49,9 +49,13 @@ task bucketsort(type : JavaExec) {
 }
 
 task mergesort(type : JavaExec) {
-
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.sorting.MergeSort"
+}
+
+task quicksort(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.sorting.QuickSort"
 }
 
 task dfs(type : JavaExec) {
