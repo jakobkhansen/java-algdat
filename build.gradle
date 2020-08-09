@@ -108,4 +108,8 @@ task stack(type : JavaExec) {
     main = "com.algdat.datastructures.containers.Stack"
 }
 
+task kosaraju(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.KosarajuComponents"
+}
 

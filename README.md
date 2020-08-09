@@ -38,8 +38,8 @@ algorithms.
 
   * Other
     * ✔️  Topological sort
-    * ✔️  Separation nodes
-    * ❌ Strongly connected components
+    * ✔️  Separation nodes (Tarjan)
+    * ✔️  Kosaraju's algorithm (Strongly connected components)
     * ❌ Huffman coding
 
 * Arrays
