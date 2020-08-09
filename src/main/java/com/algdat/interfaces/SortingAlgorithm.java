@@ -1,4 +1,4 @@
-package com.algdat.algorithms.sorting;
+package com.algdat.interfaces;
 
 public interface SortingAlgorithm {
     public int[] sort(int[] array);

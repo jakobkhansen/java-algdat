@@ -4,7 +4,7 @@ package com.algdat.utils;
 import java.util.Arrays;
 import java.util.Random;
 
-import com.algdat.algorithms.sorting.SortingAlgorithm;
+import com.algdat.interfaces.SortingAlgorithm;
 
 public class SortingTest {
 

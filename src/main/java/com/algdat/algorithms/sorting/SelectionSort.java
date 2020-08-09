@@ -1,5 +1,6 @@
 package com.algdat.algorithms.sorting;
 
+import com.algdat.interfaces.SortingAlgorithm;
 import com.algdat.utils.SortingTest;
 
 public class SelectionSort implements SortingAlgorithm {

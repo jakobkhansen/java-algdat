@@ -3,6 +3,7 @@ package com.algdat.algorithms.sorting;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.algdat.interfaces.SortingAlgorithm;
 import com.algdat.utils.SortingTest;
 
 public class RadixSort implements SortingAlgorithm {
