@@ -98,6 +98,12 @@ task binarytree(type : JavaExec) {
     main = "com.algdat.datastructures.graphs.BinaryTree"
 }
 
+task redblacktree(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.datastructures.graphs.RedBlackTree"
+
+}
+
 task separationnodes(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.SeparationNodes"
