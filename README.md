@@ -19,7 +19,7 @@ algorithms.
   * ✔️  Bucket sort
   * ✔️ Radix sort
   * ✔️  Counting sort
-  * ❌ Heap sort
+  * ✔️ Heap sort
 
 * Graphs
   * Traversal
