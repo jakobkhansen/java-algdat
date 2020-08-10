@@ -54,10 +54,10 @@ algorithms.
 
 * Graphs
   * ✔️ Binary tree
-  * ❌ Red black tree
+  * ✔️ Red black tree
 
 ## Utilities
 * ✔️ Graph Generator
-* ✔️ Binary tree visualizer
+* ✔️ Binary tree visualizer / Red black tree visualizer
 * ✔️  Sorting test generator
 * ❌ Binary tree generator

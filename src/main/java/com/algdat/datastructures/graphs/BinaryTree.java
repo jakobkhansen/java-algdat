@@ -224,6 +224,22 @@ public class BinaryTree {
 
     // Test
     public static void main(String[] args) {
+        //BinaryTree test = new BinaryTree();
+
+
+        //test.insert(20);
+        //BinaryTreePrinter.printNode(test.root);
+        //test.insert(10);
+        //BinaryTreePrinter.printNode(test.root);
+        //test.insert(15);
+        //BinaryTreePrinter.printNode(test.root);
+        //test.insert(30);
+        //BinaryTreePrinter.printNode(test.root);
+        //test.insert(20);
+        //BinaryTreePrinter.printNode(test.root);
+        //test.insert(22);
+        //BinaryTreePrinter.printNode(test.root);
+
         BinaryTree tree = new BinaryTree();
         tree.insert(10);
         tree.insert(20);
