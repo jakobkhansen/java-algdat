@@ -63,6 +63,11 @@ task radixsort(type : JavaExec) {
     main = "com.algdat.algorithms.sorting.RadixSort"
 }
 
+task heapsort(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.sorting.HeapSort"
+}
+
 task dfs(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.DFS"
