@@ -124,3 +124,7 @@ task kosaraju(type : JavaExec) {
     main = "com.algdat.algorithms.graphs.KosarajuComponents"
 }
 
+task prims(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.Prims"
+}
