@@ -32,7 +32,7 @@ algorithms.
     * ❌ Topological sort shortest path
 
   * Minimum spanning tree
-    * ❌ Prim's algorithm
+    * ✔️ Prim's algorithm
     * ❌ Kruskal's algorithm
     * ❌ Borůvka's algorithm
 
