@@ -8,8 +8,8 @@ import com.algdat.utils.SortingTest;
 
 public class RadixSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         int maxDigits = 0;
         for (int num : array) {
             if (Math.log10(num) > maxDigits) {
@@ -22,8 +22,8 @@ public class RadixSort implements SortingAlgorithm {
         }
 
 
-		return array;
-	}
+        return array;
+    }
 
     public void countingSort(int[] array, int digit) {
         List<List<Integer>> count = new ArrayList<List<Integer>>();
@@ -46,10 +46,10 @@ public class RadixSort implements SortingAlgorithm {
         }
     }
 
-	@Override
-	public String algorithmName() {
+    @Override
+    public String algorithmName() {
         return "Radix sort";
-	}
+    }
 
     public static void main(String[] args) {
         SortingAlgorithm radixSort = new RadixSort();

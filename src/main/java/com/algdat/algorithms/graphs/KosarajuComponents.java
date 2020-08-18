@@ -25,26 +25,26 @@ public class KosarajuComponents {
             this.id = id;
         }
 
-		@Override
-		public void addEdge(Node node) {
+        @Override
+        public void addEdge(Node node) {
             edges.add(node);
             numEdges++;
-		}
+        }
 
-		@Override
-		public boolean containsEdge(Node node) {
+        @Override
+        public boolean containsEdge(Node node) {
             return edges.contains(node);
-		}
+        }
 
-		@Override
-		public String getId() {
+        @Override
+        public String getId() {
             return id;
-		}
+        }
 
-		@Override
-		public List<Node> getEdges() {
+        @Override
+        public List<Node> getEdges() {
             return edges;
-		}
+        }
 
         public void addEdgeReversed(Node edge) {
             edges.add(edge);

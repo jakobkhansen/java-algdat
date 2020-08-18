@@ -5,8 +5,8 @@ import com.algdat.utils.SortingTest;
 
 public class HeapSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         for (int i = array.length / 2 - 1; i >= 0; i--) {
             heapify(array, array.length, i);
         }
@@ -20,7 +20,7 @@ public class HeapSort implements SortingAlgorithm {
         }
 
         return array;
-	}
+    }
 
     public void heapify(int[] array, int size, int root) {
         int largest = root;
@@ -54,10 +54,10 @@ public class HeapSort implements SortingAlgorithm {
     }
 
 
-	@Override
-	public String algorithmName() {
+    @Override
+    public String algorithmName() {
         return "Heap sort";
-	}
+    }
 
 
     public static void main(String[] args) {
