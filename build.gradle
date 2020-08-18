@@ -128,3 +128,8 @@ task prims(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.Prims"
 }
+
+task kruskals(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.graphs.Kruskals"
+}
