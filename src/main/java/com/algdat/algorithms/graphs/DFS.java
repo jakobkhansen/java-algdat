@@ -17,25 +17,25 @@ public class DFS {
             this.id = id;
         }
 
-		@Override
-		public boolean containsEdge(Node node) {
+        @Override
+        public boolean containsEdge(Node node) {
             return edges.contains(node);
-		}
+        }
 
-		@Override
-		public List<Node> getEdges() {
+        @Override
+        public List<Node> getEdges() {
             return edges;
-		}
+        }
 
-		@Override
-		public String getId() {
+        @Override
+        public String getId() {
             return id;
-		}
+        }
 
-		@Override
-		public void addEdge(Node node) {
+        @Override
+        public void addEdge(Node node) {
             edges.add(node);
-		}
+        }
     }
     // Returns the order of nodes visited in DFS order
     public static ArrayList<Node> dfsOrder(Node start) {

@@ -5,11 +5,11 @@ import com.algdat.utils.SortingTest;
 
 public class MergeSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         mergeSort(array, 0, array.length-1);
         return array;
-	}
+    }
 
     public void mergeSort(int[] array, int l, int r) {
         if (l < r) {
@@ -65,10 +65,10 @@ public class MergeSort implements SortingAlgorithm {
         }
     }
 
-	@Override
-	public String algorithmName() {
+    @Override
+    public String algorithmName() {
         return "Merge sort";
-	}
+    }
 
     public static void main(String[] args) {
         SortingAlgorithm mergeSort = new MergeSort();

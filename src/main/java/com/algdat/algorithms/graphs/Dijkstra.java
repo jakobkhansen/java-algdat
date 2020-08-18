@@ -23,25 +23,25 @@ public class Dijkstra {
             this.id = id;
         }
 
-		@Override
-		public Map<Node, Integer> getEdges() {
+        @Override
+        public Map<Node, Integer> getEdges() {
             return edges;
-		}
+        }
 
-		@Override
-		public boolean containsEdge(Node node) {
+        @Override
+        public boolean containsEdge(Node node) {
             return edges.containsKey(node);
-		}
+        }
 
-		@Override
-		public String getId() {
+        @Override
+        public String getId() {
             return id;
-		}
+        }
 
-		@Override
-		public void addEdge(Node node) {
+        @Override
+        public void addEdge(Node node) {
             edges.put(node, 0);
-		}
+        }
 
         @Override
         public void addEdge(Node node, int weight) {

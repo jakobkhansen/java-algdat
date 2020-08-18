@@ -13,30 +13,32 @@ public class BFS {
         List<Node> edges = new ArrayList<>();
         String id;
 
+
         public Node(String id) {
             this.id = id;
         }
 
-		@Override
-		public boolean containsEdge(Node node) {
+        @Override
+        public boolean containsEdge(Node node) {
             return edges.contains(node);
-		}
+        }
 
-		@Override
-		public String getId() {
+        @Override
+        public String getId() {
             return id;
-		}
+        }
 
-		@Override
-		public List<Node> getEdges() {
+        @Override
+        public List<Node> getEdges() {
             return edges;
-		}
+        }
 
-		@Override
-		public void addEdge(Node node) {
+        @Override
+        public void addEdge(Node node) {
             edges.add(node);
-		}
+        }
     }
+
     public static List<List<Node>> bfs(Node start) {
         List<List<Node>> layers = new ArrayList<>();
 
@@ -86,6 +88,7 @@ public class BFS {
                 ret += node.getId() + " ";
             }
             ret += "]\n";
+
         }
         return ret;
     }

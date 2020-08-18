@@ -5,15 +5,15 @@ import com.algdat.utils.SortingTest;
 
 public class InsertionSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             for (int j = i; j > 0 && array[j] < array[j-1]; j--) {
                 swap(array, j, j-1);
             }
         }
-		return array;
-	}
+        return array;
+    }
 
     public void swap(int[] array, int i, int j) {
         int temp = array[i];
@@ -21,10 +21,10 @@ public class InsertionSort implements SortingAlgorithm {
         array[j] = temp;
     }
 
-	@Override
-	public String algorithmName() {
-		return "Insertion Sort";
-	}
+    @Override
+    public String algorithmName() {
+        return "Insertion Sort";
+    }
 
     // Test
     public static void main(String[] args) {

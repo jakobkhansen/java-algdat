@@ -8,8 +8,8 @@ import com.algdat.utils.SortingTest;
 
 public class BucketSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         int numBuckets = array.length;
         int max = 0;
         List<List<Integer>> buckets = new ArrayList<>();
@@ -43,7 +43,7 @@ public class BucketSort implements SortingAlgorithm {
             }
         }
         return array;
-	}
+    }
 
     public void insertionSort(List<Integer> bucket) {
         for (int i = 1; i < bucket.size(); i++) {
@@ -55,10 +55,10 @@ public class BucketSort implements SortingAlgorithm {
         }
     }
 
-	@Override
-	public String algorithmName() {
+    @Override
+    public String algorithmName() {
         return "Bucket sort";
-	}
+    }
 
     public static void main(String[] args) {
         SortingAlgorithm bucketSort = new BucketSort();

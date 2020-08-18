@@ -5,12 +5,12 @@ import com.algdat.utils.SortingTest;
 
 public class QuickSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         quickSort(array, 0, array.length - 1);
 
         return array;
-	}
+    }
 
     public void quickSort(int[] array, int l, int r) {
         if (l < r) {
@@ -54,10 +54,10 @@ public class QuickSort implements SortingAlgorithm {
         return ret + "]";
     }
 
-	@Override
-	public String algorithmName() {
+    @Override
+    public String algorithmName() {
         return "Quick sort";
-	}
+    }
 
     public static void main(String[] args) {
         SortingAlgorithm quickSort = new QuickSort();

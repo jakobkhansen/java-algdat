@@ -5,8 +5,8 @@ import com.algdat.utils.SortingTest;
 
 public class CountingSort implements SortingAlgorithm {
 
-	@Override
-	public int[] sort(int[] array) {
+    @Override
+    public int[] sort(int[] array) {
         int[] count = new int[512];
         int[] sorted = new int[array.length];
 
@@ -22,13 +22,13 @@ public class CountingSort implements SortingAlgorithm {
             }
         }
 
-		return sorted;
-	}
+        return sorted;
+    }
 
-	@Override
-	public String algorithmName() {
-		return "Counting sort";
-	}
+    @Override
+    public String algorithmName() {
+        return "Counting sort";
+    }
     
     // Test
     public static void main(String[] args) {
