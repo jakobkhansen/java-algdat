@@ -33,7 +33,7 @@ algorithms.
 
   * Minimum spanning tree
     * ✔️ Prim's algorithm
-    * ❌ Kruskal's algorithm
+    * ✔️ Kruskal's algorithm
     * ❌ Borůvka's algorithm
 
   * Other
