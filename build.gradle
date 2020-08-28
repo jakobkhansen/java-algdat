@@ -133,3 +133,13 @@ task kruskals(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.Kruskals"
 }
+
+task naivepatternmatch(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.strings.NaivePatternMatch"
+}
+
+task horspool(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.strings.Horspool"
+}
