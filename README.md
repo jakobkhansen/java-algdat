@@ -45,6 +45,13 @@ algorithms.
 * Arrays
   * ✔️ Binary search
 
+* String algorithms
+    * Pattern matching
+        * ✔️ Naive algorithm
+        * ✔️ Horspool algorithm
+        * ❌ Knut-Morris-Pratt algorithm
+        * ❌ Rabin-Karp algorithm
+
 ## Datastructures
 * Containers
   * ✔️ Stack
