@@ -143,3 +143,8 @@ task horspool(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.strings.Horspool"
 }
+
+task avltree(type : JavaExec) { 
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.datastructures.graphs.AVLTree"
+}
