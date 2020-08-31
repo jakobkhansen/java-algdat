@@ -62,6 +62,7 @@ algorithms.
 * Graphs
   * ✔️ Binary tree
   * ✔️ Red black tree
+  * ✔️ AVL tree
 
 ## Utilities
 * ✔️ Graph Generator
