@@ -56,7 +56,7 @@ algorithms.
 * Containers
   * ✔️ Stack
   * ✔️ Priority queue
-  * ❌ Heap
+  * ✔️ Heap
   * ❌ HashMap
 
 * Graphs

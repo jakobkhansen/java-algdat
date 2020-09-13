@@ -150,7 +150,11 @@ task avltree(type : JavaExec) {
 }
 
 task huffman(type : JavaExec) {
-
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.trees.HuffmanCoding"
+}
+
+task heap(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.datastructures.containers.Heap"
 }
