@@ -148,3 +148,9 @@ task avltree(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.datastructures.graphs.AVLTree"
 }
+
+task huffman(type : JavaExec) {
+
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.trees.HuffmanCoding"
+}

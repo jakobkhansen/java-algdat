@@ -76,6 +76,10 @@ public class PriorityQueue<T> {
         return false;
     }
 
+    public int size() {
+        return queue.size();
+    }
+
 
     public String toString() {
         String ret = "Priority queue (Element, priority):\n";
