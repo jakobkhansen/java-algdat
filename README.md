@@ -40,7 +40,7 @@ algorithms.
     * ✔️  Topological sort
     * ✔️  Separation nodes (Tarjan)
     * ✔️  Kosaraju's algorithm (Strongly connected components)
-    * ❌ Huffman coding
+    * ✔️ Huffman coding
 
 * Arrays
   * ✔️ Binary search
