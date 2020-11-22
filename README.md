@@ -53,7 +53,7 @@ algorithms.
         - [ ] Rabin-Karp algorithm
     * Edit distance
         - [x] Standard Bottom-up (Wagner-Fischer)
-        - [ ] Top-down memoized
+        - [x] Top-down memoized (Wagner-Fischer?)
 
 ## Datastructures
 * Containers

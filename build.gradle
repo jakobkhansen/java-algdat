@@ -163,3 +163,8 @@ task editdistancebottomup(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.strings.WagnerFischerBottomUp"
 }
+
+task editdistancetopdown(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.strings.WagnerFischerTopDown"
+}
