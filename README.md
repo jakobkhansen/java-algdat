@@ -10,62 +10,65 @@ randomly generated. Some algorithms use datastructures where its natural, for ex
 Other files are various utilities which generate tests, graphs and help visualize the
 algorithms.
 
-## Algorithms (✔️ Implemented / ❌ Not implemented):
+## Algorithms:
 * Sorting
-  * ✔️ Insertion sort
-  * ✔️  Selection sort
-  * ✔️  Merge sort
-  * ✔️  Quick sort
-  * ✔️  Bucket sort
-  * ✔️ Radix sort
-  * ✔️  Counting sort
-  * ✔️ Heap sort
+  - [x] Insertion sort
+  - [x] Selection sort
+  - [x] Merge sort
+  - [x] Quick sort
+  - [x] Bucket sort
+  - [x] Radix sort
+  - [x] Counting sort
+  - [x] Heap sort
 
 * Graphs
   * Traversal
-    * ✔️ DFS
-    * ✔️ BFS
+    - [x] DFS
+    - [x] BFS
 
   * Shortest path
-    * ✔️ Dijkstra
-    * ✔️ Bellman-Ford
-    * ❌ Topological sort shortest path
+    - [x] Dijkstra
+    - [x] Bellman-Ford
+    - [ ] Topological sort shortest path
 
   * Minimum spanning tree
-    * ✔️ Prim's algorithm
-    * ✔️ Kruskal's algorithm
-    * ❌ Borůvka's algorithm
+    - [x] Prim's algorithm
+    - [x] Kruskal's algorithm
+    - [ ] Borůvka's algorithm
 
   * Other
-    * ✔️  Topological sort
-    * ✔️  Separation nodes (Tarjan)
-    * ✔️  Kosaraju's algorithm (Strongly connected components)
-    * ✔️ Huffman coding
+    - [x]  Topological sort
+    - [x]  Separation nodes (Tarjan)
+    - [x]  Kosaraju's algorithm (Strongly connected components)
+    - [x] Huffman coding
 
 * Arrays
-  * ✔️ Binary search
+  - [x] Binary search
 
 * String algorithms
     * Pattern matching
-        * ✔️ Naive algorithm
-        * ✔️ Horspool algorithm
-        * ❌ Knut-Morris-Pratt algorithm
-        * ❌ Rabin-Karp algorithm
+        - [x] Naive algorithm
+        - [x] Horspool algorithm
+        - [ ] Knut-Morris-Pratt algorithm
+        - [ ] Rabin-Karp algorithm
+    * Edit distance
+        - [x] Standard Bottom-up (Wagner-Fischer)
+        - [ ] Top-down memoized
 
 ## Datastructures
 * Containers
-  * ✔️ Stack
-  * ✔️ Priority queue
-  * ✔️ Heap
-  * ❌ HashMap
+  - [x] Stack
+  - [x] Priority queue
+  - [x] Heap
+  - [ ] HashMap
 
 * Graphs
-  * ✔️ Binary tree
-  * ✔️ Red black tree
-  * ✔️ AVL tree
+  - [x] Binary tree
+  - [x] Red black tree
+  - [x] AVL tree
 
 ## Utilities
-* ✔️ Graph Generator
-* ✔️ Binary tree visualizer / Red black tree visualizer
-* ✔️  Sorting test generator
-* ❌ Binary tree generator
+- [x] Graph Generator
+- [x] Binary tree visualizer / Red black tree visualizer
+- [x]  Sorting test generator
+- [ ] Binary tree generator

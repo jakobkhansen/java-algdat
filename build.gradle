@@ -158,3 +158,8 @@ task heap(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.datastructures.containers.Heap"
 }
+
+task editdistancebottomup(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.strings.WagnerFischerBottomUp"
+}

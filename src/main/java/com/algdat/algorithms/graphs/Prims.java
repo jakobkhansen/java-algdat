@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
 
 import com.algdat.interfaces.GraphNodeWeighted;
 import com.algdat.utils.GraphGenerator;
 import com.algdat.utils.GraphUtils;
 
 public class Prims {
-    public static class Node implements GraphNodeWeighted<Node> {
+    public static class Node implements GraphNodeWeighted<Node>, Comparable<Node> {
         String id;
         int smallestWeight = Integer.MAX_VALUE;
         Node smallestEdge;
@@ -42,6 +43,11 @@ public class Prims {
         public Map<Node, Integer> getEdges() {
             return edges;
         }
+
+		@Override
+		public int compareTo(Node o) {
+			return smallestWeight - o.smallestWeight;
+		}
     }
 
 
@@ -49,20 +55,20 @@ public class Prims {
     // Because it is copying a graph and adding the minimum edges, this is very unclean code.
     public static List<Node> minimumSpanningTree(List<Node> graph) {
         List<Node> mSpanningTree = new ArrayList<>();
-        List<Node> queue = new ArrayList<>();
+        PriorityQueue<Node> queue = new PriorityQueue<>();
 
         HashMap<Node, Node> originalToNewMap = new HashMap<>();
 
         for (Node node : graph) {
             queue.add(node);
+
             Node spanningTreeNode = new Node(node.id);
             mSpanningTree.add(spanningTreeNode);
             originalToNewMap.put(node, spanningTreeNode);
         }
 
         while (!queue.isEmpty()) {
-            int smallestEdgeNode = findSmallest(queue);
-            Node node = queue.remove(smallestEdgeNode);
+            Node node = queue.poll();
 
             Node newNode = originalToNewMap.get(node);
 
@@ -77,6 +83,8 @@ public class Prims {
                 if (queue.contains(edge) && node.edges.get(edge) < edge.smallestWeight) {
                     edge.smallestEdge = node;
                     edge.smallestWeight = node.edges.get(edge);
+                    queue.remove(edge);
+                    queue.add(edge);
                 }
             }
         }
@@ -105,11 +113,12 @@ public class Prims {
 
         System.out.println(GraphUtils.weightedGraphToStringDetailed(graph));
 
-        //System.out.println(GraphUtils.weightedGraphToGraphML(graph, false));
+        System.out.println(GraphUtils.weightedGraphToGraphML(graph, false));
 
         List<Node> mSpanningTree = minimumSpanningTree(graph);
 
         System.out.println("\n\nMinimum spanning tree");
         System.out.println(GraphUtils.weightedGraphToStringDetailed(mSpanningTree));
+        System.out.println(GraphUtils.weightedGraphToGraphML(mSpanningTree, false));
     }
 }
