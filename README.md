@@ -25,6 +25,7 @@ algorithms.
   * Traversal
     - [x] DFS
     - [x] BFS
+    - [ ] Iterative deepening
 
   * Shortest path
     - [x] Dijkstra
@@ -41,6 +42,8 @@ algorithms.
     - [x]  Separation nodes (Tarjan)
     - [x]  Kosaraju's algorithm (Strongly connected components)
     - [x] Huffman coding
+    - [ ] Maximal matching (Hungarian)
+    - [ ] Maximum flow in network (Ford-Fulkerson)
 
 * Arrays
   - [x] Binary search
@@ -59,7 +62,10 @@ algorithms.
 * Containers
   - [x] Stack
   - [x] Priority queue
-  - [x] Heap
+  - [x] Binary Heap
+  - [ ] Leftist Heap
+  - [ ] Binomial Heap
+  - [ ] Fibonacci Heap
   - [ ] HashMap
 
 * Graphs
