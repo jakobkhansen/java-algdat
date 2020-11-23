@@ -25,7 +25,7 @@ algorithms.
   * Traversal
     - [x] DFS
     - [x] BFS
-    - [ ] Iterative deepening
+    - [x] Iterative deepening
 
   * Shortest path
     - [x] Dijkstra
