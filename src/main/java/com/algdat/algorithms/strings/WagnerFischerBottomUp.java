@@ -158,8 +158,8 @@ public class WagnerFischerBottomUp {
     }
 
     public static void main(String[] args) {
-        String s1 = "DEMOCRAT";
-        String s2 = "REPUBLICAN";
+        String s1 = "ABAB";
+        String s2 = "ABBAB";
         System.out.println("Input:  " + s1);
         System.out.println("Output: " + s2);
 

@@ -1,50 +1,70 @@
 package com.algdat.algorithms.strings;
 
-public class WagnerFischerTopDown {
+import java.util.HashMap;
 
-    static int[][] cache;
+public class WagnerFischerTopDown {
+    static class Pair {
+        public int x;
+        public int y;
+
+        public Pair(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public int hashCode() {
+            return ((x + y) * (x + y + 1) / 2) + y;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Pair)) {
+                return false;
+            }
+            return this.x == ((Pair) obj).x && ((Pair) obj).y == this.y;
+        }
+    }
+
+    static HashMap<Pair, Integer> minimalCache = new HashMap<>();
 
     public static int findEditDistance(String s1, String s2) {
-        cache = new int[s1.length() + 1][s2.length() + 1];
-
-        for (int i = 0; i < cache.length; i++) {
-            cache[i][0] = i;
-        }
-
-        for (int i = 0; i < cache[0].length; i++) {
-            cache[0][i] = i;
-        }
-
-        for (int i = 1; i < cache.length; i++) {
-            for (int j = 1; j < cache[i].length; j++) {
-                cache[i][j] = -1;
-            }
-        }
-
 
         return findEditDistance(s1, s2, s1.length(), s2.length());
     }
 
+    public static int getCache(Pair pair) {
+        if (pair.x == 0) {
+            return pair.y;
+        }
+        if (pair.y == 0) {
+            return pair.x;
+        }
+        return minimalCache.get(pair);
+    }
+
+    public static boolean cacheContains(Pair pair) {
+        return minimalCache.containsKey(pair) || pair.x == 0 || pair.y == 0;
+    }
+
     public static int findEditDistance(String s1, String s2, int i, int j) {
-        System.out.println("" + i);
-        System.out.println("" + j);
-        System.out.println("");
-        if (cache[i][j] != -1) {
-            return cache[i][j];
+        Pair pair = new Pair(i, j);
+        if (cacheContains(pair)) {
+            return getCache(pair);
         }
 
-        if (s1.charAt(i-1) == s2.charAt(j-1)) {
-            cache[i][j] = findEditDistance(s1, s2, i-1, j-1);
-            return cache[i][j];
+        if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
+            minimalCache.put(pair, findEditDistance(s1, s2, i - 1, j - 1));
+            return getCache(pair);
         }
 
-        int substitute = findEditDistance(s1, s2, i-1, j-1);
-        int add = findEditDistance(s1, s2, i-1, j);
-        int delete = findEditDistance(s1, s2, i, j-1);
+        int substitute = findEditDistance(s1, s2, i - 1, j - 1);
+        int add = findEditDistance(s1, s2, i - 1, j);
+        int delete = findEditDistance(s1, s2, i, j - 1);
 
-        cache[i][j] = Math.min(substitute, Math.min(add, delete)) + 1;
+        minimalCache.put(pair, Math.min(substitute, Math.min(add, delete)) + 1);
 
-        return cache[i][j];
+        return getCache(pair);
     }
 
     public static String printMatrix(int[][] matrix) {
@@ -62,11 +82,11 @@ public class WagnerFischerTopDown {
         return ret + "]";
     }
 
-    public static void main(String[] args) { 
-        String s1 = "LOGARI";
-        String s2 = "ALGORI";
+    public static void main(String[] args) {
+        String s1 = "Pneumonoultramicroscopicsilicovolcanoconiosis";
+        String s2 = "Pneumonoultramicroscopicsilicovolxanoconiosis";
 
         System.out.println(findEditDistance(s1, s2));
-        System.out.println(printMatrix(cache));
+        System.out.println("here " + minimalCache.keySet().size());
     }
 }
