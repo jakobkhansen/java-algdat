@@ -169,6 +169,13 @@ task editdistancetopdown(type : JavaExec) {
     main = "com.algdat.algorithms.strings.WagnerFischerTopDown"
 }
 
+task hirschbergs(type : JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.algdat.algorithms.strings.Hirschbergs"
+}
+
+
+
 task iterativedeepening(type : JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
     main = "com.algdat.algorithms.graphs.IterativeDeepening"

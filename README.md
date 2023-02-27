@@ -1,4 +1,5 @@
 # java-algdat
+
 Java implementation of different algorithms and datastructures.
 
 Preparation for being a TA in IN2010 - datastructures and algorithms at the University of Oslo.
@@ -10,8 +11,10 @@ randomly generated. Some algorithms use datastructures where its natural, for ex
 Other files are various utilities which generate tests, graphs and help visualize the
 algorithms.
 
-## Algorithms:
-* Sorting
+## Algorithms
+
+- Sorting
+
   - [x] Insertion sort
   - [x] Selection sort
   - [x] Merge sort
@@ -21,45 +24,54 @@ algorithms.
   - [x] Counting sort
   - [x] Heap sort
 
-* Graphs
-  * Traversal
+- Graphs
+
+  - Traversal
+
     - [x] DFS
     - [x] BFS
     - [x] Iterative deepening
 
-  * Shortest path
+  - Shortest path
+
     - [x] Dijkstra
     - [x] Bellman-Ford
     - [ ] Topological sort shortest path
 
-  * Minimum spanning tree
+  - Minimum spanning tree
+
     - [x] Prim's algorithm
     - [x] Kruskal's algorithm
     - [ ] Borůvka's algorithm
 
-  * Other
-    - [x]  Topological sort
-    - [x]  Separation nodes (Tarjan)
-    - [x]  Kosaraju's algorithm (Strongly connected components)
+  - Other
+    - [x] Topological sort
+    - [x] Separation nodes (Tarjan)
+    - [x] Kosaraju's algorithm (Strongly connected components)
     - [x] Huffman coding
     - [ ] Maximal matching (Hungarian)
     - [ ] Maximum flow in network (Ford-Fulkerson)
 
-* Arrays
+- Arrays
+
   - [x] Binary search
 
-* String algorithms
-    * Pattern matching
-        - [x] Naive algorithm
-        - [x] Horspool algorithm
-        - [ ] Knut-Morris-Pratt algorithm
-        - [ ] Rabin-Karp algorithm
-    * Edit distance
-        - [x] Standard Bottom-up (Wagner-Fischer)
-        - [x] Top-down memoized (Wagner-Fischer?)
+- String algorithms
+  - Pattern matching
+    - [x] Naive algorithm
+    - [x] Horspool algorithm
+    - [ ] Knut-Morris-Pratt algorithm
+    - [ ] Rabin-Karp algorithm
+  - Edit distance
+    - [x] Standard Bottom-up (Wagner-Fischer)
+    - [x] Top-down memoized (Wagner-Fischer)
+    - [x] Needleman-Wunsch
+    - [x] Hirschbergs
 
 ## Datastructures
-* Containers
+
+- Containers
+
   - [x] Stack
   - [x] Priority queue
   - [x] Binary Heap
@@ -68,13 +80,14 @@ algorithms.
   - [ ] Fibonacci Heap
   - [ ] HashMap
 
-* Graphs
+- Graphs
   - [x] Binary tree
   - [x] Red black tree
   - [x] AVL tree
 
 ## Utilities
+
 - [x] Graph Generator
 - [x] Binary tree visualizer / Red black tree visualizer
-- [x]  Sorting test generator
+- [x] Sorting test generator
 - [ ] Binary tree generator
